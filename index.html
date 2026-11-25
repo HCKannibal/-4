@@ -25,8 +25,8 @@
     </nav>
 
     <div class="header-actions">
-        <button class="user-button" id="auth-open">◉ ВОЙТИ</button>
-        <button class="mobile-menu" id="mobile-menu">☰</button>
+        <button type="button" class="user-button" id="auth-open">◉ ВОЙТИ</button>
+        <button type="button" class="mobile-menu" id="mobile-menu">☰</button>
     </div>
 </header>
 
@@ -50,8 +50,8 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <button class="pixel-button" data-go="catalog">ИГРАТЬ СЕЙЧАС →</button>
-                    <button class="outline-button" data-go="catalog">ИССЛЕДОВАТЬ</button>
+                    <button type="button" class="pixel-button" data-go="catalog">ИГРАТЬ СЕЙЧАС →</button>
+                    <button type="button" class="outline-button" data-go="catalog">ИССЛЕДОВАТЬ</button>
                 </div>
 
                 <div class="hero-info">
@@ -88,7 +88,7 @@
                     <p class="eyebrow">HANDPICKED FOR YOU</p>
                     <h2>ГОРЯЧИЕ <span>НОВИНКИ</span></h2>
                 </div>
-                <button class="text-button" data-go="catalog">SEE ALL →</button>
+                <button type="button" class="text-button" data-go="catalog">SEE ALL →</button>
             </div>
             <div class="game-grid" id="featured-games"></div>
         </section>
@@ -99,7 +99,7 @@
                 <h2>ТВОЙ СЛЕДУЮЩИЙ<br>ИГРОВОЙ МИР ЖДЁТ.</h2>
                 <p>Найди свою следующую любимую игру.</p>
             </div>
-            <button class="pixel-button" data-go="catalog">ОТКРЫТЬ КАТАЛОГ →</button>
+            <button type="button" class="pixel-button" data-go="catalog">ОТКРЫТЬ КАТАЛОГ →</button>
         </section>
 
     </section>
@@ -169,7 +169,7 @@
                     <span>ИТОГО</span>
                     <span id="total">0 ₸</span>
                 </div>
-                <button class="pixel-button checkout-button" id="checkout">ОФОРМИТЬ ЗАКАЗ →</button>
+                <button type="button" class="pixel-button checkout-button" id="checkout">ОФОРМИТЬ ЗАКАЗ →</button>
                 <p class="secure-note">▣ DEMO CHECKOUT</p>
             </aside>
         </div>
@@ -187,7 +187,7 @@
                 <div><strong id="profile-games">0</strong><small>ПОКУПОК</small></div>
                 <div><strong>001</strong><small>PLAYER ID</small></div>
             </div>
-            <button class="outline-button" id="logout">ВЫЙТИ ИЗ АККАУНТА</button>
+            <button type="button" class="outline-button" id="logout">ВЫЙТИ ИЗ АККАУНТА</button>
         </div>
     </section>
 
@@ -202,14 +202,14 @@
 <!-- AUTH MODAL -->
 <div class="modal hidden" id="auth-modal">
     <div class="modal-box">
-        <button class="modal-close" id="auth-close">×</button>
+        <button type="button" class="modal-close" id="auth-close">×</button>
         <div class="modal-logo">👾</div>
         <p class="eyebrow">PLAYER AUTHENTICATION</p>
         <h2 id="auth-title">WELCOME <span>BACK!</span></h2>
 
         <div class="auth-tabs">
-            <button class="auth-tab active" data-auth="login">ВОЙТИ</button>
-            <button class="auth-tab" data-auth="register">РЕГИСТРАЦИЯ</button>
+            <button type="button" class="auth-tab active" data-auth="login">ВОЙТИ</button>
+            <button type="button" class="auth-tab" data-auth="register">РЕГИСТРАЦИЯ</button>
         </div>
 
         <form id="auth-form">

@@ -1,0 +1,1091 @@
+
+:root {
+    --bg: #100c1d;
+    --panel: #19132a;
+    --panel2: #211a36;
+    --purple: #a970ff;
+    --pink: #ff69cf;
+    --blue: #64c9ff;
+    --text: #f7f1ff;
+    --muted: #9d91b5;
+    --border: #49345f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(#ffffff0b 1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* HEADER */
+
+.header {
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #100c1deF;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    color: white;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.logo-icon {
+    color: var(--pink);
+}
+
+.nav {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--pink);
+}
+
+#cart-count {
+    background: var(--purple);
+    color: white;
+    border-radius: 3px;
+    padding: 3px 6px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-button,
+.mobile-menu {
+    padding: 11px 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* GENERAL */
+
+.page {
+    display: none;
+    min-height: 70vh;
+}
+
+.page.active {
+    display: block;
+    animation: appear .35s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+    padding: 85px 7%;
+}
+
+.page-content {
+    min-height: 75vh;
+}
+
+.eyebrow {
+    color: var(--pink);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 17px;
+}
+
+h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 23px;
+    line-height: 1.8;
+}
+
+h2 span {
+    color: var(--purple);
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.text-button {
+    border: none;
+    background: none;
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 600px;
+    padding: 90px 10%;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 75% 50%, #532b8b44, transparent 55%),
+        linear-gradient(120deg, #151025, #100c1d);
+    border-bottom: 1px solid var(--border);
+}
+
+.status {
+    color: #79ffbc;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    margin-bottom: 30px;
+}
+
+.blink {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #79ffbc;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: .15; }
+}
+
+.hero-small {
+    font-size: 10px;
+    color: var(--pink);
+    letter-spacing: 4px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(25px, 4vw, 48px);
+    line-height: 1.6;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--purple);
+    text-shadow: 4px 4px #542c80;
+}
+
+.hero-description {
+    max-width: 420px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 13px;
+    margin: 25px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pixel-button {
+    padding: 17px 22px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px #51317a;
+    transition: .2s;
+}
+
+.pixel-button:hover {
+    background: var(--pink);
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px #743e81;
+}
+
+.outline-button {
+    padding: 15px 20px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.outline-button:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+.hero-info {
+    display: flex;
+    gap: 45px;
+    margin-top: 45px;
+}
+
+.hero-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.hero-info strong {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 13px;
+    color: var(--blue);
+}
+
+.hero-info small {
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+/* HERO ART */
+
+.hero-art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+}
+
+.art-glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: #a970ff;
+    opacity: .2;
+    filter: blur(100px);
+}
+
+.pixel-window {
+    position: relative;
+    width: min(100%, 380px);
+    background: #1a122a;
+    border: 3px solid var(--purple);
+    box-shadow: 12px 12px #00000066, 0 0 40px #a970ff33;
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+
+.window-bar {
+    height: 35px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--purple);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+}
+
+.console {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.console-icon {
+    font-size: 85px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 15px #a970ff);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-12px); }
+}
+
+.console p {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    color: var(--pink);
+    margin-bottom: 25px;
+}
+
+.loading-bar {
+    height: 12px;
+    background: #33264a;
+    border: 2px solid #a970ff;
+    margin-bottom: 15px;
+}
+
+.loading-bar span {
+    display: block;
+    width: 75%;
+    height: 100%;
+    background: var(--pink);
+}
+
+.console small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.console-decoration {
+    margin-top: 30px;
+    color: var(--blue);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    animation: blink 1.3s infinite;
+}
+
+.floating-pixel {
+    position: absolute;
+    color: var(--pink);
+    font-size: 35px;
+}
+
+.p1 { top: 5%; right: 10%; }
+.p2 { bottom: 10%; left: 5%; color: var(--blue); }
+.p3 { top: 25%; left: 0; }
+
+/* GAME CARDS */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.game-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: .25s;
+}
+
+.game-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--purple);
+    box-shadow: 0 10px 35px #a970ff20;
+}
+
+.game-cover {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: var(--panel2);
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.game-card:hover .game-cover img {
+    transform: scale(1.08);
+}
+
+.game-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--purple);
+    padding: 7px 10px;
+    color: white;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-genre {
+    color: var(--pink);
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.game-info h3 {
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.game-description {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--muted);
+    min-height: 36px;
+}
+
+.game-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.game-price {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--blue);
+    white-space: nowrap;
+}
+
+.add-button {
+    padding: 11px 12px;
+    background: #35234d;
+    border: 1px solid var(--purple);
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.add-button:hover {
+    background: var(--purple);
+}
+
+/* PROMO */
+
+.promo {
+    margin: 20px 7% 80px;
+    padding: 55px;
+    background: linear-gradient(110deg, #372050, #1a1732);
+    border: 2px solid var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.promo h2 {
+    font-size: 19px;
+}
+
+.promo p:not(.eyebrow) {
+    color: var(--muted);
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* CATALOG */
+
+.catalog-total {
+    color: var(--blue);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+}
+
+.catalog-toolbar {
+    display: grid;
+    grid-template-columns: 1fr 180px 210px;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 15px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+}
+
+.search-box span {
+    color: var(--pink);
+    font-size: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 0;
+    font-size: 12px;
+}
+
+.catalog-toolbar select {
+    padding: 14px;
+    color: white;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    outline: none;
+    font-size: 11px;
+}
+
+.catalog-toolbar option {
+    background: var(--panel);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 80px 15px;
+}
+
+.empty-state span {
+    font-size: 55px;
+}
+
+.empty-state h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 13px;
+    margin: 25px 0;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* CART */
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 17px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    margin-bottom: 15px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.cart-item-info p {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.remove-button {
+    background: none;
+    color: var(--pink);
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.cart-summary {
+    background: var(--panel);
+    padding: 25px;
+    border: 1px solid var(--border);
+    height: fit-content;
+}
+
+.cart-summary h3 {
+    margin-bottom: 25px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    margin: 17px 0;
+}
+
+.summary-line {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+}
+
+.summary-row.total {
+    color: white;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.summary-row.total span:last-child {
+    color: var(--blue);
+}
+
+.checkout-button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.secure-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 9px;
+    margin-top: 18px;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--panel);
+    border: 1px dashed var(--border);
+}
+
+.cart-empty div {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.cart-empty p {
+    color: var(--muted);
+    margin: 15px 0 25px;
+    font-size: 12px;
+}
+
+/* PROFILE */
+
+.profile-card {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 45px 25px;
+    text-align: center;
+    background: var(--panel);
+    border: 2px solid var(--purple);
+}
+
+.avatar {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.profile-card h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 13px;
+}
+
+.profile-card > p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 35px 0;
+}
+
+.profile-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-stats strong {
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.profile-stats small {
+    font-size: 8px;
+    color: var(--muted);
+}
+
+/* AUTH MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #080611dd;
+    backdrop-filter: blur(8px);
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    position: relative;
+    background: #1a142b;
+    border: 2px solid var(--purple);
+    box-shadow: 10px 10px #00000066;
+    animation: appear .3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+.modal-logo {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.modal-box > .eyebrow,
+.modal-box > h2 {
+    text-align: center;
+}
+
+.modal-box h2 {
+    font-size: 17px;
+}
+
+.auth-tabs {
+    display: flex;
+    margin: 25px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 12px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.auth-tab.active {
+    color: var(--pink);
+    border-bottom: 2px solid var(--pink);
+}
+
+.modal-box form label {
+    display: block;
+    margin-bottom: 17px;
+    font-size: 9px;
+    color: var(--pink);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.modal-box form input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: #100c1d;
+    border: 1px solid var(--border);
+    outline: none;
+    color: white;
+    font-size: 12px;
+}
+
+.modal-box form input:focus {
+    border-color: var(--purple);
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-message {
+    color: var(--pink);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.toast {
+    position: fixed;
+    z-index: 150;
+    bottom: 25px;
+    right: 25px;
+    max-width: calc(100% - 50px);
+    padding: 16px 22px;
+    background: var(--purple);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 5px 5px #00000055;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: .3s;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 45px 7%;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    background: #0c0916;
+}
+
+.footer .logo {
+    font-size: 13px;
+}
+
+.footer p {
+    margin: 20px 0 12px;
+    color: var(--pink);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+}
+
+.footer small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .header {
+        padding: 0 4%;
+    }
+
+    .nav {
+        gap: 17px;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #171126;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .user-button {
+        font-size: 8px;
+        padding: 9px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(23px, 7vw, 35px);
+    }
+
+    .hero-art {
+        min-height: 300px;
+    }
+
+    .hero-info {
+        gap: 25px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    .section-heading {
+        align-items: start;
+        gap: 15px;
+    }
+
+    .text-button {
+        margin-top: 20px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-cover {
+        height: 230px;
+    }
+
+    .promo {
+        margin: 0 5% 60px;
+        padding: 30px 20px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .promo h2 {
+        font-size: 14px;
+    }
+
+    .catalog-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-toolbar select {
+        width: 100%;
+    }
+
+    .cart-item {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .cart-item img {
+        width: 75px;
+        height: 85px;
+    }
+
+    .cart-item-info h3 {
+        font-size: 12px;
+    }
+
+    .cart-item-info p {
+        font-size: 10px;
+    }
+
+    .cart-item .remove-button {
+        font-size: 18px;
+    }
+
+    .modal-box {
+        padding: 28px 20px;
+    }
+
+    .modal-box h2 {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
